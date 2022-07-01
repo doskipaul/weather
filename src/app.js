@@ -6,6 +6,8 @@ const app = express()
 
 app.set('view engine', 'hbs')
 
+port = process.env.PORT || 3000
+
 const public_dir = path.join(__dirname,"../public")
 app.use(express.static(public_dir))
 
@@ -41,4 +43,4 @@ app.get('*', (req,res)=>{
     res.send('<H1> ERRROR 404 </H1>')
 })
 
-app.listen(3000, ()=> {console.log("server is app")})
+app.listen(port, ()=> {console.log("server is app")})
